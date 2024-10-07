@@ -10,7 +10,7 @@ RUN \
     export DEBIAN_FRONTEND=noninteractive && \
     # Install dependencies
     apt-get update && \
-    apt-get install -y wget python3 pkg-config && \
+    apt-get install -y wget python3 pkg-config socat minicom picocom tio && \
     # Install Raspberry Pi Pico toolchain (ignore "sudo" in script)
     cd /toolchain/ && \
     wget https://raw.githubusercontent.com/raspberrypi/pico-setup/4567073441c6ef298988baf49a8700f507c3b5a0/pico_setup.sh && \
