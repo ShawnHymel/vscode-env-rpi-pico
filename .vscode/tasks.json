@@ -10,14 +10,16 @@
                 "--rm",
                 "-v", "${workspaceFolder}:/workspace",      // Mount the workspace folder
                 "-w", "/workspace/${input:projectDir}",     // Set the working directory inside the container
-                "env-pico",                   // Replace with your actual Docker image for Pico SDK
-                "bash", "-c", "\"cmake -S /workspace/${input:projectDir} -B /workspace/${input:projectDir}/build && cmake --build /workspace/${input:projectDir}/build\"" 
+                "env-pico",                                 // Docker image
+                "\"cmake -S /workspace/${input:projectDir} -B /workspace/${input:projectDir}/build && cmake --build /workspace/${input:projectDir}/build\"" 
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": []
+            "options": {
+                "statusbar": {
+                    "label": "⚙️ Pico Build",
+                    "color": "#00ffff",
+                    "detail": "Build Pico project (ctrl+shift+b)",
+                }
+            }
         }
     ],
     "inputs": [

@@ -1,0 +1,31 @@
+{
+    // VSCode Action Buttons configuration
+    "actionButtons": {
+        "commands": [
+            {
+                "name": "Build Pico 🐧",  // Text or icon for the button
+                "color": "#00FFFF",  // Green color for the button
+				"useVsCodeApi": true,  // True to use the VS Code API, false to run in the terminal
+                "command": "workbench.action.tasks.runTask",  // VS Code command to run a task
+				""
+                "tooltip": "Build the Pico project (ctrl+shift+b)",  // Tooltip when hovering
+            }
+        ],
+    },
+
+    // Hotkey bindings for building the Pico project
+    "keybindings": [
+        {
+            "key": "ctrl+shift+b",  // Hotkey for Windows/Linux
+            "command": "workbench.action.tasks.runTask",
+            "args": "docker-pico-build",  // Task label from tasks.json
+            "when": "isLinux || isWindows"  // Conditional for Windows and Linux
+        },
+        {
+            "key": "cmd+shift+b",  // Hotkey for macOS
+            "command": "workbench.action.tasks.runTask",
+            "args": "docker-pico-build",  // Task label from tasks.json
+            "when": "isMac"  // Conditional for macOS
+        }
+    ]
+}

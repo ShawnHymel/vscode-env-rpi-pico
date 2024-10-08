@@ -26,6 +26,11 @@ Comms from container: average RTT = 0.000740 s
  * Install [VS Code](https://code.visualstudio.com/)
  * Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
+Install VS Code extensions:
+
+ * [Tasks](https://marketplace.visualstudio.com/items?itemName=actboy168.tasks)
+ * [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor)
+
 Create a virtual environment:
 
 ```sh
