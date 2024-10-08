@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "docker-pico-build",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-v", "${workspaceFolder}:/workspace",      // Mount the workspace folder
+                "-w", "/workspace/${input:projectDir}",     // Set the working directory inside the container
+                "env-pico",                   // Replace with your actual Docker image for Pico SDK
+                "bash", "-c", "\"cmake -S /workspace/${input:projectDir} -B /workspace/${input:projectDir}/build && cmake --build /workspace/${input:projectDir}/build\"" 
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectDir",
+            "type": "promptString",
+            "description": "Enter the project directory (e.g., blink or my-project)"
+        }
+    ]
+}
